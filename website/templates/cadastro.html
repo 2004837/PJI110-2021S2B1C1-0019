@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Cadastro completo</title>
+
+</head>
+<body>
+<style>
+ 
+ td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+</style>
+
+<div align='center'>
+<table>
+  <thead>
+    <tr>
+        <th>Celular</th>
+        <th>Nome</th>
+    </tr>
+    </thead>    
+    <tbody>
+     {% for row in table_data %}    
+            <tr>
+                <td>{{row.celular}}</td>
+                <td>{{row.name}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+<a align='center' href="/">Tela inicial</a>
+
+</body>
+</html>

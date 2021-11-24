@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+
+.ped{
+
+  display:block;
+
+}
+
+.comanda{
+border-style: solid;
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #09eed7;
+  color: #0723fa;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#pedido li {
+  list-style-type: none;
+
+}
+
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+.client{
+
+display: none;
+
+}
+
+#marmitex{
+font-weight: bold;
+text-align: center;
+
+}
+
+#nome{
+font-weight: bold;
+text-align: center;
+
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 style="text-align:center">Buy 'n' Bye Take-out Restaurant</h1>
+
+</div>
+<form method="POST">
+ 
+    <div class="form-group ">
+      <label for="celular">Celular</label>
+      <input
+        type="celular"
+        class="form-control"
+        id="celular"
+        name="celular"
+       
+      />
+     
+     
+    </div>
+    <button type="submit" class="btn btn-primary">Busca</button><br>
+
+  </form>
+ 
+
+  
+  <a href="/cadastrar">  Cadastrar  </a>
+
+<div class="row">
+  <div class="col-4 menu">
+    <ul>
+      <li id="item_1" onclick="incluir('item_1')">Arroz</li>
+      <li id="item_2" onclick="incluir('item_2')">Feijão</li>
+      <li id="item_3" onclick="incluir('item_3')">Bife acebolado</li>
+      <li id="item_4" onclick="incluir('item_4')">Tilápia à milanesa</li>
+      <li id="item_5" onclick="incluir('item_5')">Legumes refogados</li>
+      <li id="item_6" onclick="incluir('item_6')">Salada verde</li>
+      <li id="item_7" onclick="incluir('item_7')">Tomate</li>
+      <li id="item_8" onclick="incluir('item_8')">Farofa</li>
+    </ul>
+  </div>
+  
+  <div id="pedido" class="col-4 menu">
+  <li class="client" id="nome"> {{customer_name}} - {{dt_string}}</li>
+  <li class="client" id="marmitex"> Marmitex</li>
+  </div>
+
+  <button class="button col-3" onclick="montarComanda()"> Montar comanda </button>
+  <button class="button col-3" ><a href="/">Novo pedido</a> </button>
+ <button class="button col-4" onclick="imprimirComanda()">Imprimir </button>
+ 
+
+
+</div>
+
+
+    <script type="text/javascript"
+    src="{{ url_for('static', filename='index.js')}}">
+    </script>
+
+</body>
+
+</html>
